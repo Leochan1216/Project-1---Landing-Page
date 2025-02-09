@@ -161,7 +161,7 @@ section h3 {
 }
 
 .project-card {
-	max-width: 18rem;
+	max-width: 18 em;
 	margin: 5rem auto;
 	box-shadow: 0px 0px 3px 2px rgb(57, 255, 20);
     display: block;
