@@ -1,0 +1,387 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+    - Normalize
+    - Box sizing
+    - Media width
+# Base
+    - Typography
+    - Elements
+    - Links
+# Layout
+# Components
+    - Header
+    - Navigation
+    - Main (History Page)
+    - Footer
+# Media Queries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography */
+body {
+    background: url('/images/hongkong-background.jpg') no-repeat center center/cover;
+    position: relative;
+    color: #000;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(15px);
+    z-index: -1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+p {
+    font-size: 16px;
+}
+
+/* Elements */
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button:focus, a:focus {
+    outline: 2px solid #ffcc00;
+    outline-offset: 2px;
+}
+
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+
+/* Header */
+#main-header {
+    background: #aaa;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header-logo {
+    height: 40px;
+    width: auto;
+}
+
+.header-title {
+    font-size: 24px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* Navigation */
+#main-nav {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: bold;
+}
+
+/* Mobile Menu */
+.menu-button {
+    display: none;
+    background: white;
+    color: #aaa;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#mobile-nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: #000;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 10;
+    padding: 10px 0;
+}
+
+#mobile-nav.active {
+    display: flex;
+}
+
+#mobile-nav ul {
+    list-style: none;
+    width: 100%;
+}
+
+#mobile-nav li {
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid white;
+}
+
+#mobile-nav a {
+    color: white;
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Skip links */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background: #ffcc00;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+/* Main (Economy Page) */
+#main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+    padding: 20px;
+    min-height: 80vh;
+}
+
+/* Economy Introduction */
+.economy-intro {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Economy Flexbox Layout */
+.sector-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Individual Sector Cards */
+.sector-card {
+    background: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 22%;
+    min-width: 200px;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sector-title {
+    margin-bottom: 10px;
+}
+
+.sector-stat {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sector-card:hover {
+    transform: scale(1.05);
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+    background: #8b0000;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Main (Economy Page) */
+#main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+    padding: 20px;
+    min-height: 80vh;
+}
+
+/* Economy Introduction */
+.economy-intro {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Economy Flexbox Layout */
+.sector-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Individual Sector Cards */
+.sector-card {
+    background: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 22%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sector-title {
+    margin-bottom: 10px;
+}
+
+.sector-stat {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sector-card:hover {
+    transform: scale(1.05);
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#main-footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+    #main-nav {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+}
