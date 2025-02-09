@@ -63,7 +63,7 @@ a:focus {
 	margin: 0 auto;
 	padding: 0 1rem;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 }
 
 #logo {
@@ -161,11 +161,11 @@ section h3 {
 }
 
 .project-card {
-	max-width: 18 em;
+	max-width: 18 rem;
 	margin: 5rem auto;
 	box-shadow: 0px 0px 3px 2px rgb(57, 255, 20);
     display: block;
-	justify-content: space-between;
+	justify-content: space-evenly;
 }
 
 .project-name {
